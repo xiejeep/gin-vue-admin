@@ -16,4 +16,5 @@ var (
 	OldAuthorityVerify     = Rules{"OldAuthorityId": {NotEmpty()}}
 	ChangePasswordVerify   = Rules{"Password": {NotEmpty()}, "NewPassword": {NotEmpty()}}
 	SetUserAuthorityVerify = Rules{"AuthorityId": {NotEmpty()}}
+	SysApplicationVerify   = Rules{"ID": {NotEmpty()}, "Name": {NotEmpty()}, "ApiKey": {NotEmpty()}, "BaseUrl": {NotEmpty()}}
 )

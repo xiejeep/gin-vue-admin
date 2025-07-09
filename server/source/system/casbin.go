@@ -192,6 +192,13 @@ func (i *initCasbin) InitializeData(ctx context.Context) (context.Context, error
 		{Ptype: "p", V0: "888", V1: "/attachmentCategory/addCategory", V2: "POST"},
 		{Ptype: "p", V0: "888", V1: "/attachmentCategory/deleteCategory", V2: "POST"},
 
+		{Ptype: "p", V0: "888", V1: "/application/createSysApplication", V2: "POST"},
+		{Ptype: "p", V0: "888", V1: "/application/deleteSysApplication", V2: "DELETE"},
+		{Ptype: "p", V0: "888", V1: "/application/deleteSysApplicationByIds", V2: "DELETE"},
+		{Ptype: "p", V0: "888", V1: "/application/updateSysApplication", V2: "PUT"},
+		{Ptype: "p", V0: "888", V1: "/application/findSysApplication", V2: "GET"},
+		{Ptype: "p", V0: "888", V1: "/application/getSysApplicationList", V2: "GET"},
+
 		{Ptype: "p", V0: "8881", V1: "/user/admin_register", V2: "POST"},
 		{Ptype: "p", V0: "8881", V1: "/api/createApi", V2: "POST"},
 		{Ptype: "p", V0: "8881", V1: "/api/getApiList", V2: "POST"},
@@ -231,6 +238,13 @@ func (i *initCasbin) InitializeData(ctx context.Context) (context.Context, error
 		{Ptype: "p", V0: "8881", V1: "/customer/customer", V2: "GET"},
 		{Ptype: "p", V0: "8881", V1: "/customer/customerList", V2: "GET"},
 		{Ptype: "p", V0: "8881", V1: "/user/getUserInfo", V2: "GET"},
+
+		{Ptype: "p", V0: "8881", V1: "/application/createSysApplication", V2: "POST"},
+		{Ptype: "p", V0: "8881", V1: "/application/deleteSysApplication", V2: "DELETE"},
+		{Ptype: "p", V0: "8881", V1: "/application/deleteSysApplicationByIds", V2: "DELETE"},
+		{Ptype: "p", V0: "8881", V1: "/application/updateSysApplication", V2: "PUT"},
+		{Ptype: "p", V0: "8881", V1: "/application/findSysApplication", V2: "GET"},
+		{Ptype: "p", V0: "8881", V1: "/application/getSysApplicationList", V2: "GET"},
 
 		{Ptype: "p", V0: "9528", V1: "/user/admin_register", V2: "POST"},
 		{Ptype: "p", V0: "9528", V1: "/api/createApi", V2: "POST"},
@@ -274,6 +288,13 @@ func (i *initCasbin) InitializeData(ctx context.Context) (context.Context, error
 		{Ptype: "p", V0: "9528", V1: "/customer/customerList", V2: "GET"},
 		{Ptype: "p", V0: "9528", V1: "/autoCode/createTemp", V2: "POST"},
 		{Ptype: "p", V0: "9528", V1: "/user/getUserInfo", V2: "GET"},
+
+		{Ptype: "p", V0: "9528", V1: "/application/createSysApplication", V2: "POST"},
+		{Ptype: "p", V0: "9528", V1: "/application/deleteSysApplication", V2: "DELETE"},
+		{Ptype: "p", V0: "9528", V1: "/application/deleteSysApplicationByIds", V2: "DELETE"},
+		{Ptype: "p", V0: "9528", V1: "/application/updateSysApplication", V2: "PUT"},
+		{Ptype: "p", V0: "9528", V1: "/application/findSysApplication", V2: "GET"},
+		{Ptype: "p", V0: "9528", V1: "/application/getSysApplicationList", V2: "GET"},
 	}
 	if err := db.Create(&entities).Error; err != nil {
 		return ctx, errors.Wrap(err, "Casbin 表 ("+i.InitializerName()+") 数据初始化失败!")

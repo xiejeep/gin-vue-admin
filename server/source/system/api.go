@@ -188,6 +188,13 @@ func (i *initApi) InitializeData(ctx context.Context) (context.Context, error) {
 		{ApiGroup: "媒体库分类", Method: "GET", Path: "/attachmentCategory/getCategoryList", Description: "分类列表"},
 		{ApiGroup: "媒体库分类", Method: "POST", Path: "/attachmentCategory/addCategory", Description: "添加/编辑分类"},
 		{ApiGroup: "媒体库分类", Method: "POST", Path: "/attachmentCategory/deleteCategory", Description: "删除分类"},
+
+		{ApiGroup: "应用管理", Method: "POST", Path: "/application/createSysApplication", Description: "新建应用"},
+		{ApiGroup: "应用管理", Method: "DELETE", Path: "/application/deleteSysApplication", Description: "删除应用"},
+		{ApiGroup: "应用管理", Method: "DELETE", Path: "/application/deleteSysApplicationByIds", Description: "批量删除应用"},
+		{ApiGroup: "应用管理", Method: "PUT", Path: "/application/updateSysApplication", Description: "更新应用"},
+		{ApiGroup: "应用管理", Method: "GET", Path: "/application/findSysApplication", Description: "根据ID获取应用"},
+		{ApiGroup: "应用管理", Method: "GET", Path: "/application/getSysApplicationList", Description: "获取应用列表"},
 	}
 	if err := db.Create(&entities).Error; err != nil {
 		return ctx, errors.Wrap(err, sysModel.SysApi{}.TableName()+"表数据初始化失败!")

@@ -36,8 +36,18 @@ func (r *GetById) Uint() uint {
 	return uint(r.ID)
 }
 
+// GetByUUID Find by UUID structure
+type GetByUUID struct {
+	ID string `json:"id" form:"id"` // 主键UUID
+}
+
 type IdsReq struct {
 	Ids []int `json:"ids" form:"ids"`
+}
+
+// UUIDsReq UUID批量请求结构体
+type UUIDsReq struct {
+	Ids []string `json:"ids" form:"ids"`
 }
 
 // GetAuthorityId Get role by id structure
